@@ -1,15 +1,13 @@
-FROM node:22-bookworm-slim
+FROM node:22-trixie-slim
 
 WORKDIR /app
 
 COPY package.json package-lock.json ./
 
-RUN npm ci --include=optional
+RUN npm ci
 
 COPY . .
 
 ENV NODE_ENV=production
-
-EXPOSE 8000
 
 CMD ["npm", "start"]
