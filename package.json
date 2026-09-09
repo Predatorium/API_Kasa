@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "postinstall": "node -e \"try { require('sqlite3'); } catch(e) { console.log('Rebuilding sqlite3...'); require('child_process').execSync('npm rebuild sqlite3', {stdio:'inherit'}); }\""
+    "postinstall": "npm rebuild sqlite3"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
